@@ -66,8 +66,11 @@ public class CircleLinkList<E> {
             return null;
         }
         CircleNode<E> cur = first;
-        if(idx == 1){
-            cur.next = cur.next.next;
+        if(cur.next == first){
+            if(idx == 1){
+                first = null;
+                return cur.data;
+            }
             return null;
         }
         cur = cur.next;
